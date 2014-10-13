@@ -1,0 +1,19 @@
+<h2>{{model.name}}</h2>
+
+<h2>Productentries</h2>
+<ul>
+  {{#each productentry in productentries}}
+    <li>
+    	{{productentry.title}}
+    </li>
+  {{/each}}
+</ul>
+
+<h2>Productprices</h2>
+<ul>
+  {{#each productprice in productprices}}
+    <li>
+    	{{productprice.med_price}}
+    </li>
+  {{/each}}
+</ul>
