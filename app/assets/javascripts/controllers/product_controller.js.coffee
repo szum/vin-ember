@@ -1,0 +1,1 @@
+App.ProductShowController = Ember.ObjectController.extendx

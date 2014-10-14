@@ -3,6 +3,8 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require raphael-min
+#= require morris
 #= require_self
 #= require app
 

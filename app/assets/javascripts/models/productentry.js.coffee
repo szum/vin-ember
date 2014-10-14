@@ -3,6 +3,7 @@ App.Productentry = DS.Model.extend
 	url: DS.attr('string')
 	location: DS.attr('string')
 	price: DS.attr('number')
-	endDate: DS.attr('string')
+	endDate: DS.attr('date')
 	image: DS.attr('string')
+	condition: DS.attr('string')
 	product: DS.belongsTo('product')

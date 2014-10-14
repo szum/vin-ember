@@ -1,19 +1,142 @@
-<h4>{{model.name}}</h4>
+<div id="primary-content">
+  <div class="row">
+    <div class="row-content-wrap">
+      <div id="product-name" class="col-md-10 col-xs-12 col-md-offset-2">
+        <h2>{{kind}}</h2>
+        <h1>{{name}}</h1>
+      </div>
+      <div id="product-image-container" class="col-md-6 col-md-offset-6 col-xs-12">
+        <img class="product-image" {{bind-attr src=imageUrl}} />
+      </div>
+    </div>
+  </div>
 
-<h5>Presentations</h5>
-<ul>
-  {{#each productentry in productentries}}
-    <li>
-    	{{productentry.title}}
-    </li>
-  {{/each}}
-</ul>
+{{#if desc }}
+  <div class="row">
+    <div class="row-content-wrap">
+      <div class="side-heading col-md-3 col-md-offset-2 col-xs-12">
+        <h3 class="text-heading"><strong>Description</strong></h3>
+      </div>
+      <div id="desc" class="content col-md-7 col-xs-12">
+        {{desc}}
+      </div>
+    </div>
+  </div>
+{{/if}}
 
-<h2>Productprices</h2>
-<ul>
-  {{#each productprice in productprices}}
-    <li>
-    	{{productprice.med_price}}
-    </li>
-  {{/each}}
-</ul>
+  <div class="row">
+    <div class="row-content-wrap">  
+      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
+        <h3 class="text-heading"><strong>Specifications</strong></h3>
+      </div>
+      <div class="content col-md-7 col-xs-12 col-xs-12">
+        <table id="product-info" class="table table-striped">
+          <tr>
+            <td class="product-info-hd">Manufacturer</td> 
+            <td class="product-info-desc">{{company.name}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Year</td> 
+            <td class="product-info-desc">{{year}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Polyphony</td> 
+            <td class="product-info-desc">{{polyphony}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Oscillator</td> 
+            <td class="product-info-desc">{{oscillator}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Waveforms</td> 
+            <td class="product-info-desc">{{waveform}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Memory</td> 
+            <td class="product-info-desc">{{memory}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Sampling</td> 
+            <td class="product-info-desc">{{sampling}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Control</td> 
+            <td class="product-info-desc">{{control}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Revisions</td> 
+            <td class="product-info-desc">{{revision}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="row-content-wrap">
+      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
+        <h3 class="text-heading"><strong>Market Data</strong></h3>
+      </div>
+      <div class="content col-md-7 col-xs-12">
+        <table id="market-info" class="table table-striped">
+          <tr>
+            <td class="product-info-hd">Median Price</td> 
+            <td class="product-info-desc">{{medPrice}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">High Price</td> 
+            <td class="product-info-desc">{{highPrice}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Low Price</td> 
+            <td class="product-info-desc">{{lowPrice}}</td>
+          </tr>
+          <tr>
+            <td class="product-info-hd">Last Year Price</td> 
+            <td class="product-info-desc">{{lastYearPrice.med_price}}</td>
+          </tr>
+        </table>
+        {{prices-chart priceData=productprices}}
+      </div>
+    </div>
+  </div>
+
+{{#if productentries}}
+  <div id="products-table" class="row">
+    <div class="row-content-wrap">
+      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
+        <h3 class="text-heading"><strong>Listings</strong></h3>
+      </div>
+      <div class="content col-md-7 col-xs-12">
+        <div id="product-entries">
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th class="table-hide-mobile">Title</th>
+                <th>Price</th>
+                <th class="table-hide-mobile">Condition</th>
+                <th>Location</th>
+                <th>End Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each productentry in productentries}}
+                <tr>
+                  <td class="productentry-image-cell"><img class="productentry-image" {{bind-attr src=productentry.image}}</td>
+                  <td class="entry-title cell-text-left table-hide-mobile">{{productentry.title}}</td>
+                  <td>${{productentry.price}}</td>
+                  <td class="table-hide-mobile">{{productentry.condition}}</td>
+                  <td>{{productentry.location}}</td>
+                  <td>{{productentry.endDate}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
+</div>
