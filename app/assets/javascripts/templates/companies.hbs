@@ -1,0 +1,5 @@
+{{#unless isProductsVisible}}
+	{{#each company in controller}}
+		{{#link-to 'companies.show' company tagName="li"}}{{company.name}}{{/link-to}}
+	{{/each}}
+{{/unless}}

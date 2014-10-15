@@ -7,3 +7,5 @@ App.Router.reopen
 App.Router.map ->
 	@resource 'products', path: '/', ->
 		@route 'show', path: '/:id'
+	@resource 'companies', ->
+		@route 'show', path: '/:id'

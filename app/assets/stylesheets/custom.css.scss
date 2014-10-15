@@ -5,6 +5,25 @@ $grid-float-breakpoint: 769px;
 
 	/* all */
 
+	.dropdown-list {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 1000;
+		float: left;
+		min-width: 160px;
+		padding: 5px 10px;
+		margin: 2px 0 0;
+		font-size: 14px;
+		text-align: left;
+		list-style: none;
+		background-color: #FFF;
+		background-clip: padding-box;
+		border: 1px solid rgba(0,0,0,.15);
+		border-radius: 4px;
+		box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	}
+		
 	.gravatar {
 		display: block;
 		margin: 0 auto;

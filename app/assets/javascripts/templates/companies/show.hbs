@@ -1,0 +1,3 @@
+{{#each product in products}}
+	{{#link-to 'products.show' product tagName="li"}}{{product.name}}{{/link-to}}
+{{/each}}
