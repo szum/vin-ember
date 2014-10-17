@@ -3,6 +3,9 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require lodash.min
+#= require d3.min
+#= require ember-charts
 #= require raphael-min
 #= require morris
 #= require_self

@@ -114,7 +114,9 @@
             <td class="product-info-desc">{{lastYearPrice.med_price}}</td>
           </tr>
         </table>
-        {{prices-chart priceData=productprices}}
+        <div id="prices-chart"
+          {{time-series-chart data=productPrices}}
+        </div>
       </div>
     </div>
   </div>
