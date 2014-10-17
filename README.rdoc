@@ -4,3 +4,7 @@ Take down
 - Morris chart
 - Nav bar
 - Description into 2 paragraphs
+
+
+renderTemplate: -> 
+	@render { outlet: 'dropdown-menu' }

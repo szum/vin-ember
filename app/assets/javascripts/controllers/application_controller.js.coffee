@@ -1,8 +1,11 @@
 App.ApplicationController = Ember.Controller.extend
-	isDropdownVisible: false
+	queryParams: ['kind']
+	kind: null
 
-	navProducts: ( ->
-		if @get('isDropdownVisible')
-			@store.find 'product'
-	).property('isDropdownVisible')
-		
+	isSynthDropdownVisible: false
+	isDrumDropdownVisible: false
+	isSamplerDropdownVisible: false
+
+	navCompanies: ( ->
+		companies = @store.find('company')
+		).property()

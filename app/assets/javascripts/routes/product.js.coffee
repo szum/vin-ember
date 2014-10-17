@@ -1,2 +1,6 @@
 App.ProductsShowRoute = Ember.Route.extend
-	model: (params) -> @store.find('product', params.id)
+
+
+	activate: -> @controllerFor('companies.show').set 'isProductVisible', true
+	deactivate: -> @controllerFor('companies.show').set 'isProductVisible', false
+	model: (params) -> @store.find 'product', params.product_id

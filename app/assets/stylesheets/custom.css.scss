@@ -5,6 +5,10 @@ $grid-float-breakpoint: 769px;
 
 	/* all */
 
+	.dropdown {
+		position: relative;
+	}
+
 	.dropdown-list {
 		position: absolute;
 		top: 100%;
@@ -242,6 +246,7 @@ $grid-float-breakpoint: 769px;
 		margin-top: 1%;
 		padding-left: 0px;
 		z-index: 1;
+		border: 0px;
 		.navbar-header {
 			width: 80px;
 			list-style-type: none;

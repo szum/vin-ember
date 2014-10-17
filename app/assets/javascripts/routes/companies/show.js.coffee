@@ -1,7 +1,6 @@
 App.CompaniesShowRoute = Ember.Route.extend
 
-	renderTemplate: ->
-		@render { outlet: 'dropdown-menu' }
-	activate: -> @controllerFor('companies').set 'isProductsVisible', true	
-	model: (params) -> @store.find 'company', params.id
+	activate: -> @controllerFor('companies').set 'isProductsVisible', true
+	deactivate: -> @controllerFor('companies').set 'isProductsVisible', false
+	model: (params) -> @store.find 'company', params.company_id
 

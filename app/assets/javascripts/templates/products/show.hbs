@@ -43,30 +43,47 @@
             <td class="product-info-hd">Polyphony</td> 
             <td class="product-info-desc">{{polyphony}}</td>
           </tr>
-          <tr>
-            <td class="product-info-hd">Oscillator</td> 
-            <td class="product-info-desc">{{oscillator}}</td>
-          </tr>
-          <tr>
-            <td class="product-info-hd">Waveforms</td> 
-            <td class="product-info-desc">{{waveform}}</td>
-          </tr>
-          <tr>
-            <td class="product-info-hd">Memory</td> 
-            <td class="product-info-desc">{{memory}}</td>
-          </tr>
-          <tr>
-            <td class="product-info-hd">Sampling</td> 
-            <td class="product-info-desc">{{sampling}}</td>
-          </tr>
-          <tr>
-            <td class="product-info-hd">Control</td> 
-            <td class="product-info-desc">{{control}}</td>
-          </tr>
-          <tr>
-            <td class="product-info-hd">Revisions</td> 
-            <td class="product-info-desc">{{revision}}</td>
-          </tr>
+          {{#if oscillator}}
+            <tr>
+              <td class="product-info-hd">Oscillator</td> 
+              <td class="product-info-desc">{{oscillator}}</td>
+            </tr>
+          {{/if}}
+
+          {{#if waveform}}
+            <tr>
+              <td class="product-info-hd">Waveforms</td> 
+              <td class="product-info-desc">{{waveform}}</td>
+            </tr>
+          {{/if}}
+
+          {{#if memory}}
+            <tr>
+              <td class="product-info-hd">Memory</td> 
+              <td class="product-info-desc">{{memory}}</td>
+            </tr>
+          {{/if}}
+
+          {{#if sampling}}
+            <tr>
+              <td class="product-info-hd">Sampling</td> 
+              <td class="product-info-desc">{{sampling}}</td>
+            </tr>
+          {{/if}}
+
+          {{#if control}}
+            <tr>
+              <td class="product-info-hd">Control</td> 
+              <td class="product-info-desc">{{control}}</td>
+            </tr>
+          {{/if}}
+
+          {{#if revisions}}
+            <tr>
+              <td class="product-info-hd">Revisions</td> 
+              <td class="product-info-desc">{{revision}}</td>
+            </tr>
+          {{/if}}
         </table>
       </div>
     </div>

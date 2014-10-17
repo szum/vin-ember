@@ -1,3 +1,49 @@
-{{#each product in products}}
-	{{#link-to 'products.show' product tagName="li"}}{{product.name}}{{/link-to}}
-{{/each}}
+{{outlet}}
+
+{{#unless isProductVisible}}
+	<div id="primary-content">
+	  <div class="row">
+	    <div class="row-content-wrap">
+	      <div id="product-name" class="col-md-10 col-xs-12 col-md-offset-2">
+	        <h2>Company</h2>
+	        <h1>{{name}}</h1>
+	      </div>
+	    </div>
+	  </div>
+
+	  <div id="products-table" class="row">
+	    <div class="row-content-wrap">
+	      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
+	        <h3 class="text-heading"><strong>Listings</strong></h3>
+	      </div>
+	      <div class="content col-md-7 col-xs-12">
+	        <div id="product-entries">
+	          <table class="table table-hover table-striped">
+	            <thead>
+	              <tr>
+	                <th>Image</th>
+	                <th class="table-hide-mobile">Title</th>
+	                <th>Price</th>
+	                <th class="table-hide-mobile">Condition</th>
+	                <th>Location</th>
+	                <th>End Date</th>
+	              </tr>
+	            </thead>
+	            <tbody>
+	              {{#each product in filteredProducts}}
+	              	{{#link-to 'products.show' product tagName='tr'}}
+		                  <td class="productentry-image-cell"><img class="productentry-image" 
+		                  	{{bind-attr src=product.imageURL}}</td>
+		                  <td class="entry-title cell-text-left table-hide-mobile">{{product.name}}</td>
+		                  <td>${{product.medPrice}}</td>
+		                  <td>{{product.company}}</td>
+		              {{/link-to}}
+	              {{/each}}
+	            </tbody>
+	          </table>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+{{/unless}}

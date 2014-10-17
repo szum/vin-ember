@@ -5,7 +5,7 @@ App.Router.reopen
 	location: 'auto'
 
 App.Router.map ->
-	@resource 'products', path: '/', ->
-		@route 'show', path: '/:id'
-	@resource 'companies', ->
-		@route 'show', path: '/:id'
+	@resource 'companies', path: '/', ->
+		@route 'show', path: '/:company_id', ->
+			@resource 'products', ->
+				@route 'show', path: '/:product_id'
