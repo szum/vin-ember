@@ -29,7 +29,7 @@
 	            </thead>
 	            <tbody>
 	              {{#each product in filteredProducts}}
-	              	{{#link-to 'products.show' product product.company tagName='tr'}}
+	              	{{#link-to 'products.show' product.company product tagName='tr'}}
 		                  <td class="productentry-image-cell"><img class="productentry-image" 
 		                  	{{bind-attr src=product.imageURL}}</td>
 		                  <td class="entry-title cell-text-left table-hide-mobile">{{product.name}}</td>

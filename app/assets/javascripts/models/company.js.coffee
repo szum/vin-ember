@@ -4,5 +4,6 @@ App.Company = DS.Model.extend
 
 	imageUrl: ( ->
 		path = "https://s3.amazonaws.com/vinsync/"
-		path + @get('name') + "_Logo.png"
+		companyName = @get('name').replace(/\s+/g, '_')
+		path + companyName + "_Logo.png"
 		).property('name')

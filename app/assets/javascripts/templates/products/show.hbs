@@ -141,7 +141,7 @@
               </tr>
             </thead>
             <tbody>
-              {{#each productentry in productentries}}
+              {{#each productentry in paginatedContent}}
                 <tr>
                   <td class="productentry-image-cell"><img class="productentry-image" {{bind-attr src=productentry.image}}</td>
                   <td class="entry-title cell-text-left table-hide-mobile">{{productentry.title}}</td>
@@ -152,6 +152,26 @@
                 </tr>
               {{/each}}
             </tbody>
+            {{#if hasPages}}
+              <div class="pagination">
+                <ul>
+                  {{#if prevPage}}
+                    <li><a href="#" {{action "selectPage" prevPage}}>&laquo;</a></li>
+                  {{else}}
+                    <li class="disabled"><a>&laquo;</a></li>
+                  {{/if}}
+                  {{#each pages itemController="page"}}
+                    <li {{bindAttr class="active disabled"}}><a href="#" {{action "selectPage" number}}>{{number}}</a></li>
+                  {{/each}}
+                  
+                  {{#if nextPage}}
+                    <li><a href="#" {{action "selectPage" nextPage}}>&raquo;</a></li>
+                  {{else}}
+                    <li class="disabled"><a>&raquo;</a></li>
+                  {{/if}}
+                </ul>
+              </div>
+            {{/if}}
           </table>
         </div>
       </div>

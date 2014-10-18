@@ -6,6 +6,12 @@ App.DropdownView = Ember.View.extend
 			isSynthDropdownVisible: false
 			isDrumDropdownVisible: false
 			isSamplerDropdownVisible: false
+
+	doubleClick: (evt) ->
+		@get('controller').setProperties
+			isSynthDropdownVisible: false
+			isDrumDropdownVisible: false
+			isSamplerDropdownVisible: false
 		kind = @get('controller.kind')
 		if kind == 'synth'
 			@get('controller').toggleProperty 'isSynthDropdownVisible'
