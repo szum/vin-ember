@@ -19,6 +19,7 @@ gem 'ember-source'
 gem 'emblem-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 
 # Use jquery as the JavaScript library
