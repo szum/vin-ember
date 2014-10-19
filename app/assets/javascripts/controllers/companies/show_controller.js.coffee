@@ -3,12 +3,14 @@ App.CompaniesShowController = Ember.ObjectController.extend
 
 	isProductVisible: false
 
+	kind: Ember.computed.alias('controllers.application.kind')
+
 	products: ( ->
-		if @get('controllers.application.kind') then @get('filteredProducts') else @get('model').get('products')
-		).property('controllers.application.kind', 'filteredProducts', 'model.products')
+		if @get('kind') then @get('filteredProducts') else @get('model.products')
+		).property('kind', 'filteredProducts', 'model.products')
 
 	filteredProducts: ( ->
-		kind = @get('controllers.application').get('kind')
-		products = @get('model').get('products')
+		kind = @get('kind')
+		products = @get('model.products')
 		products.filterBy(kind)
-		).property('controllers.application.kind', 'model.products')
+		).property('kind', 'model.products')

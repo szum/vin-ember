@@ -6,4 +6,4 @@ App.Productentry = DS.Model.extend
 	endDate: DS.attr('date')
 	image: DS.attr('string')
 	condition: DS.attr('string')
-	product: DS.belongsTo('product')
+	product: DS.belongsTo('product', {async: true})

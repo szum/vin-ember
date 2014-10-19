@@ -4,37 +4,32 @@
 	<div id="primary-content">
 	  <div class="row">
 	    <div class="row-content-wrap">
-	      <div id="product-name" class="col-md-10 col-xs-12 col-md-offset-2">
-	        <h2>Company</h2>
-	        <h1>{{name}}</h1>
-	      </div>
-	      <div id="product-image-container" class="col-md-6 col-md-offset-6 col-xs-12">
-	        <img class="product-image" {{bind-attr src=imageUrl}} />
+	      <div id="product-image-container" class="col-md-7 col-md-offset-4 col-xs-12">
+	    		<img class="company-image" {{bind-attr src=imageUrl}} />
 	      </div>
 	    </div>
-	  </div>
-
+	  <div>
 	  <div id="products-table" class="row">
 	    <div class="row-content-wrap">
-	      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
-	        <h3 class="text-heading"><strong>Listings</strong></h3>
-	      </div>
-	      <div class="content col-md-7 col-xs-12">
+	      <div class="col-md-7 col-xs-12 col-md-offset-4">
 	        <div id="product-entries">
 	          <table class="table table-hover table-striped">
 	            <thead>
 	              <tr>
 	                <th>Image</th>
 	                <th>Model</th>
+	                <th>Company</th>
 	                <th>Type</th>
 	                <th>Price</th>
 	              </tr>
 	            </thead>
 	            <tbody>
 	              {{#each product in products}}
-	              	{{#link-to 'products.show' product tagName='tr'}}
-		                  <td><img class="productentry-image" {{bindAttr src="product.imageURL"}} /></td>
+	              	{{#link-to 'products.show' product.company product tagName='tr'}}
+		                  <td class="productentry-image-cell"><img class="productentry-image product-table" 
+		                  	{{bind-attr src=product.imageUrl}}</td>
 		                  <td>{{product.name}}</td>
+		                  <td>{{product.company.name}}</td>
 		                  <td>{{product.kind}}</td>
 		                  <td>${{product.medPrice}}</td>
 		              {{/link-to}}

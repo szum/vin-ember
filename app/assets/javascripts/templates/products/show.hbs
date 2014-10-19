@@ -14,7 +14,7 @@
 {{#if desc }}
   <div class="row">
     <div class="row-content-wrap">
-      <div class="side-heading col-md-3 col-md-offset-2 col-xs-12">
+      <div class="col-md-3 col-md-offset-2 col-xs-12 side-heading ">
         <h3 class="text-heading"><strong>Description</strong></h3>
       </div>
       <div id="desc" class="content col-md-7 col-xs-12">
@@ -26,7 +26,7 @@
 
   <div class="row">
     <div class="row-content-wrap">  
-      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
+      <div class ="col-md-3 col-md-offset-2 col-xs-12 side-heading">
         <h3 class="text-heading"><strong>Specifications</strong></h3>
       </div>
       <div class="content col-md-7 col-xs-12 col-xs-12">
@@ -92,7 +92,7 @@
 
   <div class="row">
     <div class="row-content-wrap">
-      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
+      <div class ="col-md-3 col-md-offset-2 col-xs-12 side-heading">
         <h3 class="text-heading"><strong>Market Data</strong></h3>
       </div>
       <div class="content col-md-7 col-xs-12">
@@ -109,10 +109,6 @@
             <td class="product-info-hd">Low Price</td> 
             <td class="product-info-desc">{{lowPrice}}</td>
           </tr>
-          <tr>
-            <td class="product-info-hd">Last Year Price</td> 
-            <td class="product-info-desc">{{lastYearPrice.med_price}}</td>
-          </tr>
         </table>
         <div id="prices-chart"
           {{time-series-chart data=productPrices}}
@@ -124,7 +120,7 @@
 {{#if productentries}}
   <div id="products-table" class="row">
     <div class="row-content-wrap">
-      <div class ="side-heading col-md-3 col-md-offset-2 col-xs-12">
+      <div class ="col-md-3 col-md-offset-2 col-xs-12 side-heading">
         <h3 class="text-heading"><strong>Listings</strong></h3>
       </div>
       <div class="content col-md-7 col-xs-12">
@@ -141,7 +137,7 @@
               </tr>
             </thead>
             <tbody>
-              {{#each productentry in paginatedContent}}
+              {{#each productentry in productentries}}
                 <tr>
                   <td class="productentry-image-cell"><img class="productentry-image" {{bind-attr src=productentry.image}}</td>
                   <td class="entry-title cell-text-left table-hide-mobile">{{productentry.title}}</td>
@@ -152,26 +148,6 @@
                 </tr>
               {{/each}}
             </tbody>
-            {{#if hasPages}}
-              <div class="pagination">
-                <ul>
-                  {{#if prevPage}}
-                    <li><a href="#" {{action "selectPage" prevPage}}>&laquo;</a></li>
-                  {{else}}
-                    <li class="disabled"><a>&laquo;</a></li>
-                  {{/if}}
-                  {{#each pages itemController="page"}}
-                    <li {{bindAttr class="active disabled"}}><a href="#" {{action "selectPage" number}}>{{number}}</a></li>
-                  {{/each}}
-                  
-                  {{#if nextPage}}
-                    <li><a href="#" {{action "selectPage" nextPage}}>&raquo;</a></li>
-                  {{else}}
-                    <li class="disabled"><a>&raquo;</a></li>
-                  {{/if}}
-                </ul>
-              </div>
-            {{/if}}
           </table>
         </div>
       </div>

@@ -13,13 +13,13 @@ App.ProductShowController = Ember.ObjectController.extend
   ).property('productEntries.length', 'perPage')
   
   pages: ( ->
-    collection = Ember.A();
+    collection = Ember.A()
     i = 0
     while i < @get('totalPages')
       collection.pushObject Ember.Object.create
         number: i + 1
       i++
-    collection;      
+    collection
   ).property('totalPages')
   
   hasPages: ( ->
@@ -27,8 +27,8 @@ App.ProductShowController = Ember.ObjectController.extend
   ).property('totalPages')
   
   prevPage: ( ->
-    page = @get('page');
-    totalPages = @get('totalPages');
+    page = @get('page')
+    totalPages = @get('totalPages')
     
     if page > 1 && totalPages > 1
       page - 1
@@ -55,8 +55,3 @@ App.ProductShowController = Ember.ObjectController.extend
   
   selectPage: (number) ->
     @set('page', number)
-  
-
-	lastYearPrice: ( ->
-		@get('model.productprices').objectAt(1)
-	).property('model.productprices.[]')

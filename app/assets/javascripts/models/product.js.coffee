@@ -14,8 +14,8 @@ App.Product = DS.Model.extend
 	sampler: DS.attr('boolean')
 	synth: DS.attr('boolean')
 	drum: DS.attr('boolean')
-	productentries: DS.hasMany('productentry')
-	productprices: DS.hasMany('productprice')
+	productentries: DS.hasMany('productentry', {async: true})
+	productprices: DS.hasMany('productprice', {async: true})
 	company: DS.belongsTo('company', {async: true})
 	
 	imageUrl: ( ->

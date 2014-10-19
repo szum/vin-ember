@@ -2,9 +2,7 @@ App.ApplicationController = Ember.Controller.extend
 	queryParams: ['kind']
 	kind: null
 
-	isSynthDropdownVisible: false
-	isDrumDropdownVisible: false
-	isSamplerDropdownVisible: false
+	isDropdownVisible: false
 
 	navCompanies: ( ->
 		companies = @store.find('company')
