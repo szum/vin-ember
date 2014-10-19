@@ -20,6 +20,7 @@ gem 'emblem-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+gem 'rails_12factor'
 
 
 # Use jquery as the JavaScript library
