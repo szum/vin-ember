@@ -1,6 +1,5 @@
 App.ProductsShowRoute = Ember.Route.extend
 
-
 	activate: -> @controllerFor('companies').set 'productIsSelected', true
 	deactivate: -> @controllerFor('companies').set 'productIsSelected', false
 

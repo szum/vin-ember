@@ -6,7 +6,7 @@ class Api::V1::ProductpricesController < ApplicationController
 	end
 
 	def show
-		@productprice = Productprice.find(params[:id])
+		@productprice = Productprice.find(params[:ids])
 	  respond_with @productprice
 	end
 

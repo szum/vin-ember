@@ -1,7 +1,7 @@
 class Api::V1::CompaniesController < ApplicationController
 
 	def index
-		render json: Company.active_companies
+		render json: Company.active_companies, each_serializer: LazyCompanySerializer
 	end
 
 	def show
