@@ -9,7 +9,7 @@ class Api::V1::ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:ids])
+    @product = Product.find(params[:id])
     render json: @product, each_serializer: ProductSerializer
   end
 

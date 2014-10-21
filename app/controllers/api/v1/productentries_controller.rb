@@ -5,7 +5,7 @@ class Api::V1::ProductentriesController < ApplicationController
 	end
 
 	def show
-		@productentry = Productentry.find(params[:ids])
+		@productentry = Productentry.find(params[:id])
 		render json: @productentry
 	end
 
