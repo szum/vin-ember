@@ -1,11 +1,17 @@
-{{#unless isProductsVisible}}
+{{outlet product}}
+{{#unless productIsSelected}}
 <div id="primary-content">
   <div class="row">
     <div class="row-content-wrap">
       <div id="home-header" class="col-md-7 col-md-offset-4 col-xs-12">
         <div id="product-image-container" class="product-image" >
-      		<h2>VINTAGE HARDWARE TRACKER</h2>
-      		<h1>VINSync</h1>
+      		{{#if companyIsSelected}}
+            {{outlet company-logo}}
+          {{/if}}
+          {{#if companiesIsSelected}}
+            <h2>VINTAGE HARDWARE TRACKER</h2>
+        		<h1>VINSync</h1>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -25,6 +31,10 @@
               </tr>
             </thead>
             <tbody>
+            {{#if companyIsSelected}}
+              {{outlet company-products}}
+            {{/if}}
+            {{#if companiesIsSelected}}
               {{#each product in products}}
               	{{#link-to 'products.show' product.company product tagName='tr'}}
 	                  <td class="productentry-image-cell"><img class="productentry-image product-table" 
@@ -35,6 +45,7 @@
 	                  <td>${{product.medPrice}}</td>
 	              {{/link-to}}
               {{/each}}
+            {{/if}}
             </tbody>
           </table>
         </div>
@@ -43,4 +54,3 @@
   </div>
 </div>
 {{/unless}}
-{{outlet}}

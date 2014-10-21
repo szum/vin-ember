@@ -2,7 +2,9 @@ App.CompaniesController = Ember.ArrayController.extend
 	needs: ['application']
 	kind: Ember.computed.alias('controllers.application.kind')
 
-	isProductsVisible: false
+	companiesIsSelected: true
+	companyIsSelected: false
+	productIsSelected: false
 
 	products: ( ->
 		if @get('kind') then @get('filteredProducts') else @store.find('product')

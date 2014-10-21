@@ -1,8 +1,6 @@
 App.CompaniesShowController = Ember.ObjectController.extend
 	needs: ['application']
 
-	isProductVisible: false
-
 	kind: Ember.computed.alias('controllers.application.kind')
 
 	products: ( ->
